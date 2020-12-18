@@ -16,4 +16,15 @@ public class Inventory : MonoBehaviour
 	{
 		equipmentList.Add(equipment);
 	}
+	
+	public GameObject GetRandomEquipment()
+	{
+		int index = Random.Range(0, equipmentList.Count);
+		
+		GameObject prefab = equipmentList[index];
+		
+		equipmentList.Remove(prefab);
+		
+		return prefab;
+	}
 }

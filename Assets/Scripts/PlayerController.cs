@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class KnightController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
+	// La classe del personaggio
+	public CharacterType type;
+	
 	// Velocità di movimento
 	public float speed = 3;
 	

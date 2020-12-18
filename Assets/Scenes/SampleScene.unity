@@ -647,7 +647,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f37dd9fa2796c4e44a138b636d84ec12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equipmentPrefab: {fileID: 0}
+  equipmentPrefab: {fileID: 4380341199192755733, guid: 834767130f9cf4247ab56ee761051fd1,
+    type: 3}
 --- !u!1001 &618471646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1226,6 +1227,7 @@ GameObject:
   - component: {fileID: 1301276558}
   - component: {fileID: 1301276557}
   - component: {fileID: 1301276560}
+  - component: {fileID: 1301276561}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Player
@@ -1299,6 +1301,18 @@ MonoBehaviour:
     type: 3}
   startingWeapon2Prefab: {fileID: 919132149155446097, guid: f7c0b1b4d42be9e4b96bfc834c54be0d,
     type: 3}
+--- !u!114 &1301276561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301276556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb7f2a891d0ae84ba5df84a7b134e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1391895449
 PrefabInstance:
   m_ObjectHideFlags: 0

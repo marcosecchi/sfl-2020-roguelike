@@ -10,14 +10,21 @@ public class WeaponController : MonoBehaviour
 	public GameObject startingWeapon1Prefab;
 	public GameObject startingWeapon2Prefab;
 	
+	public Inventory inventory;
+	
+	private GameObject _equippedWeapon1Prefab;
+	private GameObject _equippedWeapon2Prefab;
+	
     void Start()
-    {
+	{
 	    EquipWeapon1(startingWeapon1Prefab);
 	    EquipWeapon2(startingWeapon2Prefab);
     }
 
 	public void EquipWeapon1(GameObject prefab)
 	{
+		_equippedWeapon1Prefab = prefab;
+		
 		foreach(Transform child in slot1)
 		{
 			Destroy(child.gameObject);
@@ -30,6 +37,8 @@ public class WeaponController : MonoBehaviour
 
 	public void EquipWeapon2(GameObject prefab)
 	{
+		_equippedWeapon2Prefab = prefab;
+		
 		foreach(Transform child in slot2)
 		{
 			Destroy(child.gameObject);
@@ -40,7 +49,21 @@ public class WeaponController : MonoBehaviour
 		}
 	}
 	
-	
+	void Update()
+	{
+		if(Input.GetButtonDown("Fire1"))
+		{
+			inventory.AddEquipment(_equippedWeapon1Prefab);
+			GameObject eq1Prefab = inventory.GetRandomEquipment();
+			EquipWeapon1(eq1Prefab);
+		}
+		if(Input.GetButtonDown("Fire2"))
+		{
+			inventory.AddEquipment(_equippedWeapon2Prefab);
+			GameObject eq2Prefab = inventory.GetRandomEquipment();
+			EquipWeapon2(eq2Prefab);			
+		}
+	}
 	
 	
 }
