@@ -9,12 +9,30 @@ public class Inventory : MonoBehaviour
 	// Lista degli oggetti in inventario
 	private List<GameObject> equipmentList;
 	
+	private bool _cursed;
+	
 	// Quando l'inventario viene creato, inizializza la lista degli oggetti (vuota)
     void Start()
     {
 	    equipmentList = new List<GameObject>();
     }
     
+	public void Curse()
+	{
+		_cursed = true;
+		StartCoroutine("EatEquipment");	
+	}
+
+	private IEnumerator EatEquipment()
+	{
+		while(_cursed)
+		{
+			yield return new WaitForSeconds(3f);
+			Debug.Log("Rimuovi oggetto");
+			// rimuovo oggetto
+		}
+	}
+	
 	// Permette di aggiungere un elemento alla lista dell'inventario
 	public void AddEquipment(GameObject equipment)
 	{

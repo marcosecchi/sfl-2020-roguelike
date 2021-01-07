@@ -8,14 +8,14 @@ public class InventoryPickup : MonoBehaviour
 {
 	// L'oggetto raccolto
 	public GameObject equipmentPrefab;
-	
+		
 	// Chi può raccogliere l'oggetto
 	public CharacterType pickableBy;
 	
 	protected void OnTriggerEnter(Collider other)
 	{
 		// Controlla che sia il personaggio che è entrato nel trigger
-		if(!other.CompareTag("Player")) return;
+		// if(!other.CompareTag("Player")) return;
 		
 		// Controlla che il personaggio abbia un inventario
 		Inventory inv = other.GetComponent<Inventory>();
