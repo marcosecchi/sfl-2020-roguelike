@@ -25,8 +25,8 @@ public class WeaponController : MonoBehaviour
 	{
 	    EquipWeapon1(startingWeapon1Prefab);
 	    EquipWeapon2(startingWeapon2Prefab);
-    }
-
+	}
+    
 	// Equipaggia il primo slot con un'arma
 	public void EquipWeapon1(GameObject prefab)
 	{
@@ -73,6 +73,18 @@ public class WeaponController : MonoBehaviour
 			GameObject eq2Prefab = inventory.GetRandomEquipment();
 			EquipWeapon2(eq2Prefab);			
 		}
+		
+		if(Input.GetButtonDown("Jump"))
+		{
+			BaseEquipment[] ar = GetComponentsInChildren<BaseEquipment>();
+			
+			foreach(BaseEquipment item in ar)
+			{
+				item.Activate();
+			}
+			
+		}
+
 	}
 	
 	

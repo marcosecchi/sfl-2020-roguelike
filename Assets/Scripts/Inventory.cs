@@ -20,7 +20,7 @@ public class Inventory : MonoBehaviour
 	public void Curse()
 	{
 		_cursed = true;
-		StartCoroutine("EatEquipment");	
+		StartCoroutine("EatEquipment");		
 	}
 
 	private IEnumerator EatEquipment()
@@ -28,8 +28,20 @@ public class Inventory : MonoBehaviour
 		while(_cursed)
 		{
 			yield return new WaitForSeconds(3f);
+			// int t = Random.Range(5f, 15f);
+			// yield return new WaitForSeconds(t);
 			Debug.Log("Rimuovi oggetto");
-			// rimuovo oggetto
+			if(equipmentList.Count > 0)
+			{
+				int index = Random.Range(0, equipmentList.Count);
+				equipmentList.RemoveAt(index);
+			}
+			else
+			{
+				
+				Debug.Log("La borsa dice: HO FAME!");
+			}
+			
 		}
 	}
 	
